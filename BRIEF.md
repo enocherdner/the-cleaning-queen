@@ -9,9 +9,15 @@ it was worked out and nobody has checked it. Anything not written here does not
 go on the page — a page that states the wrong opening hours to a real business
 loses the deal, and a made-up review is worse than no page at all.
 
-Source for everything here: research recorded in the vault at
-`02 Business/Leads and Pipeline.md`, done by web search 2026-08-31. Nothing has
-been re-checked since, and nothing below came from speaking to them.
+Sources: web-search research recorded in the vault at
+`02 Business/Leads and Pipeline.md` (2026-08-31), plus their **verified Nextdoor
+page** read 2026-09-02, which settled the address, hours and contact details.
+Nothing here came from speaking to them.
+
+**Not usable:** Nextdoor prints an auto-generated blurb under "What verified
+neighbors are saying" — *"stands poised to become a locally recognized name in
+home care"* — which is Nextdoor's own marketing copy, not a review anybody left.
+It must never appear on the page as a testimonial.
 
 ## What they do
 
@@ -22,13 +28,20 @@ Run by a couple: **Doris** does the cleaning, **Adrian** handles the paperwork.
 
 ## Where and when
 
-Serving **Kyle and Buda, Texas**. `[verified — their Facebook page]`
+**Settled 2026-09-02 from their verified Nextdoor page**
+(`nextdoor.com/pages/la-reina-de-la-limpieza-milam-tx/` — the slug is Spanish and
+misleading; the page itself is theirs and carries Nextdoor's verified badge).
 
-**Their actual base is not settled.** One listing put them in Niederwald, TX,
-a few minutes from Buda, rather than Kyle proper. `[open — needs a 2-minute
-check against their Google listing before this goes anywhere near them]`
+They trade as **"The Cleaning Queen @ Kyle, TX"** and are **based in Niederwald,
+TX** — the page's own title reads "The Cleaning Queen @ Kyle, TX - Niederwald,
+TX". So both earlier readings were right: Kyle is the market they name
+themselves after, Niederwald is where they are. `[verified]`
 
-Opening hours: **not known.** Nothing on the page may state hours.
+**Address: 348 Gustaf Trl** `[verified — Nextdoor]`
+Treat as their home. Do not put a street address on the page unless they ask —
+many cleaners work from home and do not want it published.
+
+**Open 8:00 AM – 8:00 PM, seven days a week.** `[verified — Nextdoor]`
 
 ## What they have now
 
@@ -56,13 +69,27 @@ Cleaning Queen does not.
 Their reviews are the strongest asset they have and they are trapped on
 Facebook, where they do not help anybody who is searching Google. `[inferred]`
 
+## How to reach them  `[all verified — Nextdoor, 2026-09-02]`
+
+- **Phone: (210) 580-0712**
+- **Email: doris.and.adrian.llc@gmail.com** — confirms Doris and Adrian, and
+  confirms they are an **LLC**
+- **Their link: https://cutt.ly/thecleaningqueen** — the shortener they use in
+  place of a website
+
+## What they call themselves
+
+Nextdoor categories: **House cleaning service** and **Housekeeper or maid
+service**. `[verified]` That is the closest thing to a service list they have
+published, and it is still not a list of what they will do — do not turn it into
+one.
+
+**Their logo exists**: a purple square, a white crown, "THE CLEANING Queen" with
+"@Kyle." beneath. `[verified — Nextdoor profile image]` The page should be built
+around that purple rather than a colour of its own.
+
 ## Not known
 
-- **Phone number.** Not found by search. Must come off their Google listing or
-  a Facebook message. **Nothing on the page may print a phone number.**
-- Email address.
-- Street address, and whether they even publish one — many cleaners do not.
-- Opening hours.
 - Prices, or whether they price by hour, by job, or by square foot.
 - What they actually offer: recurring vs one-off, deep cleans, move-outs,
   commercial work. None of it may be listed as a service until they say so.
