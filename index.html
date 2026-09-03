@@ -1,10 +1,236 @@
 <!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
-<title>The Cleaning Queen</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Cleaning Queen — House Cleaning in Kyle &amp; Buda, TX</title>
+<meta name="description" content="House cleaning in Kyle and Buda, Texas. Family run by Doris and Adrian. Ask for a quote and we'll get back to you.">
+
+<!--
+  THE CLEANING QUEEN — demo page, built 2026-09-02.
+
+  Everything on this page comes from BRIEF.md and nothing else. In particular:
+    · no phone number      — not known, must not be invented
+    · no opening hours     — not known
+    · no prices            — not known
+    · no list of services  — not confirmed, so nothing is claimed
+    · no "insured/bonded"  — never claim this for anyone
+    · no invented reviews  — the 805 likes / 10 reviews / 100% recommend are real
+                             and attributed; no review TEXT is quoted, because none
+                             was recorded.
+
+  There are no photographs because none of their actual work was available. Real
+  photos of finished jobs are the single biggest upgrade this page can get, and
+  are worth asking for on the first call.
+
+  THE FORM DOES NOT SEND ANYWHERE YET. It shows a success state so the page can be
+  demonstrated. It MUST be wired to a real inbox before `client publish`, or a real
+  enquiry will vanish — which is worse than having no site.
+-->
+
 <style>
-  body { margin: 0; font: 16px/1.6 system-ui, sans-serif; background: #101014; color: #e8e5f2;
-          display: grid; place-items: center; min-height: 100vh; text-align: center; }
-  p { color: #9a93ae; }
+  :root{
+    --ink:#16241f; --body:#40544c; --muted:#6d8279;
+    --line:#dbe6e0; --bg:#fbfcfb; --card:#ffffff;
+    --brand:#1f7a5e; --brand-dark:#175f49; --wash:#eef6f2; --gold:#b98b2e;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--body);
+    font:17px/1.65 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;}
+  h1,h2,h3{color:var(--ink);line-height:1.15;margin:0 0 .5em;
+    font-family:Georgia,"Times New Roman",serif;font-weight:600;letter-spacing:-.01em}
+  a{color:var(--brand-dark)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  .skip{position:absolute;left:-9999px;background:#fff;padding:10px 16px;border-radius:8px}
+  .skip:focus{left:16px;top:16px;z-index:10}
+
+  header{border-bottom:1px solid var(--line);background:var(--card)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:16px 0;flex-wrap:wrap}
+  .logo{font-family:Georgia,serif;font-size:21px;color:var(--ink);font-weight:600;
+    display:flex;align-items:center;gap:9px}
+  .crown{color:var(--gold);font-size:19px}
+  .where{color:var(--muted);font-size:14px}
+
+  .hero{background:linear-gradient(180deg,var(--wash),var(--bg));
+    border-bottom:1px solid var(--line);padding:56px 0 48px}
+  .hero h1{font-size:clamp(32px,6vw,50px);max-width:15ch}
+  .lede{font-size:clamp(18px,2.4vw,21px);max-width:46ch;margin:0 0 28px}
+  .cta{display:inline-flex;align-items:center;min-height:52px;padding:0 26px;
+    border-radius:999px;background:var(--brand);color:#fff;text-decoration:none;
+    font-weight:600;box-shadow:0 6px 18px rgba(31,122,94,.22)}
+  .cta:hover{background:var(--brand-dark)}
+  .under{margin:14px 0 0;font-size:15px;color:var(--muted)}
+
+  .proof{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);
+    margin:40px 0 0;padding:0;list-style:none}
+  .proof li{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 16px;text-align:center}
+  .proof b{display:block;font-family:Georgia,serif;font-size:28px;color:var(--ink);line-height:1.1}
+  .proof span{font-size:13px;color:var(--muted)}
+  .src{margin:12px 0 0;font-size:13px;color:var(--muted);text-align:center}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  .two{display:grid;gap:40px;grid-template-columns:1.05fr .95fr;align-items:start}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+
+  form{display:grid;gap:14px}
+  label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--ink)}
+  input,textarea,select{font:inherit;padding:13px 14px;border:1px solid var(--line);
+    border-radius:10px;background:#fff;color:var(--ink);min-height:50px;width:100%}
+  textarea{min-height:110px;resize:vertical}
+  input:focus,textarea:focus,select:focus{outline:2px solid var(--brand);outline-offset:1px;border-color:var(--brand)}
+  button{font:inherit;font-weight:700;min-height:52px;border:0;border-radius:999px;
+    background:var(--brand);color:#fff;cursor:pointer}
+  button:hover{background:var(--brand-dark)}
+  .hint{font-size:13px;color:var(--muted);font-weight:400}
+  .sent{display:none;background:var(--wash);border:1px solid var(--brand);
+    border-radius:var(--radius);padding:22px;text-align:center}
+  .sent h3{margin-bottom:.3em}
+
+  footer{padding:34px 0 46px;color:var(--muted);font-size:14px}
+  .fnote{margin-top:10px}
+
+  @media (max-width:760px){
+    .two{grid-template-columns:1fr;gap:28px}
+    .proof{grid-template-columns:1fr;gap:10px}
+    .proof li{display:flex;align-items:baseline;gap:10px;text-align:left}
+    .proof b{font-size:22px}
+    .hero{padding:40px 0 36px}
+    section{padding:38px 0}
+  }
 </style>
-<h1>The Cleaning Queen</h1>
-<p>Not built yet.</p>
+</head>
+<body>
+<a class="skip" href="#quote">Skip to the quote form</a>
+
+<header>
+  <div class="wrap bar">
+    <div class="logo"><span class="crown" aria-hidden="true">&#9819;</span> The Cleaning Queen</div>
+    <div class="where">Kyle &amp; Buda, Texas</div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero">
+    <div class="wrap">
+      <h1>A clean house, from people you'll actually meet.</h1>
+      <p class="lede">
+        The Cleaning Queen is Doris and Adrian — she cleans, he keeps the schedule
+        straight. Same two people, every visit, across Kyle and Buda.
+      </p>
+      <a class="cta" href="#quote">Ask for a quote</a>
+      <p class="under">Tell us about your place and we'll come back to you.</p>
+
+      <ul class="proof">
+        <li><b>805</b><span>people follow them</span></li>
+        <li><b>10</b><span>reviews</span></li>
+        <li><b>100%</b><span>recommend them</span></li>
+      </ul>
+      <p class="src">Figures from their Facebook page, checked 31 August 2026.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap two">
+      <div>
+        <h2>Two people, not a rota</h2>
+        <p>
+          Most cleaning companies send whoever is free. That means a stranger in your
+          house, and explaining the same things again every time.
+        </p>
+        <p>
+          The Cleaning Queen is a family business. Doris does the cleaning herself.
+          Adrian handles the booking and the paperwork, so nothing gets lost between
+          a text and a Tuesday. You get to know them, and they get to know your house
+          &mdash; which cupboard sticks, which floor hates the wrong mop.
+        </p>
+        <p>
+          Ten people have left a review, and every one of them recommends them. For a
+          job that involves handing somebody your keys, that is the part that matters.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Where they work</h3>
+        <p>Kyle and Buda, Texas, and the neighbourhoods either side.</p>
+        <p class="hint">
+          Not sure whether you're in the area? Ask below &mdash; it's usually a yes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote">
+    <div class="wrap two">
+      <div>
+        <h2>Ask for a quote</h2>
+        <p>
+          No prices guessed at over the internet. Tell them about your place and
+          they'll come back to you with a real number.
+        </p>
+        <p class="hint">
+          The more you say about the house &mdash; how many bedrooms, whether there
+          are pets, how often you'd want them &mdash; the closer the first number will be.
+        </p>
+      </div>
+
+      <div class="card">
+        <form id="quoteForm" novalidate>
+          <label>Your name
+            <input name="name" autocomplete="name" required>
+          </label>
+          <label>Phone or email
+            <input name="contact" autocomplete="tel" required>
+            <span class="hint">Whichever you'd rather be reached on.</span>
+          </label>
+          <label>Which town?
+            <select name="town">
+              <option>Kyle</option>
+              <option>Buda</option>
+              <option>Somewhere nearby</option>
+            </select>
+          </label>
+          <label>About the place
+            <textarea name="detail" placeholder="Three bedrooms, two bathrooms, one very relaxed dog. Looking for every other week."></textarea>
+          </label>
+          <button type="submit">Send it</button>
+          <p class="hint">No obligation, and your details go to Doris and Adrian &mdash; nobody else.</p>
+        </form>
+
+        <div class="sent" id="sent" role="status">
+          <h3>Thank you &mdash; that's with them.</h3>
+          <p>Doris or Adrian will get back to you shortly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>The Cleaning Queen</strong> &mdash; house cleaning in Kyle &amp; Buda, Texas.
+    <p class="fnote">Family run by Doris and Adrian.</p>
+  </div>
+</footer>
+
+<script>
+/* Demonstration only. This does not send anywhere yet — see the note at the top of
+   this file. It must be wired to a real inbox before the page goes live, because a
+   form that silently eats an enquiry is worse for them than having no site at all. */
+document.getElementById("quoteForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var name = this.name_ || this.querySelector('[name="name"]');
+  var contact = this.querySelector('[name="contact"]');
+  if (!name.value.trim() || !contact.value.trim()) {
+    (name.value.trim() ? contact : name).focus();
+    return;
+  }
+  this.style.display = "none";
+  document.getElementById("sent").style.display = "block";
+});
+</script>
+</body>
+</html>
