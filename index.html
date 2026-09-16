@@ -106,6 +106,7 @@
   .lang-b.on{background:var(--purple);color:#fff}
   .lang-b:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
   @media(max-width:600px){
+    .wrap{padding:0 24px}
     .lang-b{padding:9px 11px;font-size:12.5px}
     .bar{gap:8px}
   }
@@ -186,6 +187,9 @@
   .sticky .s{background:#fff;color:var(--purple-dark);border:1px solid var(--line)}
 
   @media (max-width:860px){
+    /* On a phone 20px hard against the bezel reads as cramped. Give the text
+       room to breathe on both sides, and let the quote card follow suit. */
+    .wrap{padding:0 26px}
     .hero-in,.two{grid-template-columns:1fr;gap:28px}
     .steps{grid-template-columns:1fr}
     .hide-sm{display:none}
