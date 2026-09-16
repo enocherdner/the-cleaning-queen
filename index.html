@@ -400,6 +400,11 @@
   <a class="s" href="#quote" data-es="Pedir presupuesto">Get a quote</a>
 </nav>
 
+<!-- Umami — privacy-friendly analytics, cookieless, so no cookie banner.
+     Counts Call tapped · Email tapped · Enquiry sent as real events.
+     The numbers are Enoch's to report; no public dashboard is published. -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="3f63e87b-8641-4faf-9c91-b0ebf488434a"></script>
+
 <script>
 /* ────────────────────────────────────────────────────────────────────
    ENGLISH / ESPAÑOL
@@ -485,10 +490,18 @@ var TCQ = (function () {
      Cloudflare Web Analytics — free forever, no cookie banner needed.
        https://dash.cloudflare.com  →  Analytics  →  Web Analytics  →  Add site
    ──────────────────────────────────────────────────────────────────── */
-/* ANALYTICS TAG GOES HERE */
+/* ── ANALYTICS ───────────────────────────────────────────────────────
+   The provider tag is an HTML <script> element and lives further UP the
+   page, just above this block — NOT here. This is inside JavaScript, so
+   an HTML tag pasted here is a syntax error.
+
+   Installed: Umami Cloud, website id 3f63e87b-8641-4faf-9c91-b0ebf488434a
+   Events wired below: Call tapped · Email tapped · Enquiry sent.
+   ──────────────────────────────────────────────────────────────────── */
 (function () {
   function track(name, detail) {
     try {
+      if (window.umami) window.umami.track(name, detail || {});
       if (window.plausible) window.plausible(name, { props: detail || {} });
       if (window.gtag) window.gtag('event', name, detail || {});
       var k = 'insights';
