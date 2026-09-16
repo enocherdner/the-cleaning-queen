@@ -96,7 +96,37 @@ around that purple rather than a colour of its own.
 - Whether they are insured or bonded — never claim this for anyone.
 - Service area beyond "Kyle and Buda".
 
-## Correction — 2026-09-16, read off their public Facebook reviews page
+## RETRACTED — 2026-09-16. The Facebook page was a different business.
+
+Everything in the section below, and every Facebook-sourced line elsewhere in this
+file, came from `facebook.com/Thecleaningqueenbg` — which Enoch identified on
+2026-09-16 as **a different Cleaning Queen, not the one in Niederwald/Kyle.**
+
+**Struck from the record and removed from the live page:**
+
+- "805 likes, 10 reviews, 100% recommend" — **not this business.** Never quote it.
+- The Brandy review and the reviewer's name — **not this business.** It was briefly
+  on the live page on 2026-09-16 and has been removed.
+- "Doris cleans, Adrian handles the paperwork" as a Facebook-sourced fact. That
+  Doris and Adrian run it still stands, but only because **their own email address
+  on Nextdoor is `doris.and.adrian.llc@gmail.com`** — a separate source.
+- The "Brandy, so maybe they have staff" worry. It was never their review. Ignore it.
+
+**What survives, all from their verified Nextdoor page (2026-09-02):** the trading
+name, Niederwald base, 348 Gustaf Trl, 8am–8pm seven days, (210) 580-0712,
+doris.and.adrian.llc@gmail.com, the two Nextdoor categories, and the logo.
+
+**This business has no verified social proof of any kind.** No review count, no
+rating, no testimonial. The page states none. **Ask Adrian where their reviews
+actually live** — that is now a real question, not a nicety.
+
+**The lesson, written down so it does not repeat:** a business name found by search
+is not the business. Their Nextdoor page was verified by badge and cross-checked by
+phone and email; the Facebook page was matched on name alone and never
+cross-checked against the phone number. Match on the phone number or the address,
+never on the name.
+
+## Superseded — the original Facebook section
 
 A real customer review, publicly visible without logging in:
 
