@@ -93,6 +93,19 @@
   .trust li:last-child{color:var(--body)}
   .trust li:last-child::first-letter{color:var(--purple)}
   .src{margin:12px 0 0;font-size:12.5px;color:var(--muted)}
+  /* Language switch. Two pills, thumb-sized, always reachable in the header. */
+  .hdr-right{display:flex;align-items:center;gap:12px}
+  .lang{display:inline-flex;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+        border-radius:999px;padding:3px;gap:2px}
+  .lang-b{appearance:none;border:0;background:transparent;color:#fff;cursor:pointer;
+          font:600 13px/1 inherit;padding:8px 12px;border-radius:999px;min-height:34px;
+          letter-spacing:.01em;transition:background .15s,color .15s}
+  .lang-b:hover{background:rgba(255,255,255,.16)}
+  .lang-b.on{background:#fff;color:var(--brand)}
+  .lang-b:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  @media(max-width:560px){
+    .lang-b{padding:8px 10px;font-size:12.5px}
+  }
 
   /* ── the form ───────────────────────────────────────────── */
   .quote{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
@@ -186,7 +199,7 @@
 </style>
 </head>
 <body>
-<a class="skip" href="#quote">Skip to the quote form</a>
+<a class="skip" href="#quote" data-es="Ir al formulario de presupuesto">Skip to the quote form</a>
 
 <header>
   <div class="wrap bar">
@@ -203,10 +216,16 @@
         <div class="brand-sub">Kyle &middot; Buda &middot; Niederwald</div>
       </div>
     </div>
+    <div class="hdr-right">
+      <div class="lang" role="group" aria-label="Language / Idioma">
+        <button type="button" class="lang-b on" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" class="lang-b" data-lang="es" aria-pressed="false">Espa&ntilde;ol</button>
+      </div>
     <a class="callbtn hide-sm" href="tel:+12105800712">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
       (210) 580-0712
     </a>
+    </div>
   </div>
 </header>
 
@@ -228,24 +247,24 @@
           <span class="dot" id="dot"></span>
           <span id="openNow">Open today until 8pm</span>
         </div>
-        <h1>A clean house, from people you'll actually meet.</h1>
-        <p class="lede">
+        <h1 data-es="Una casa limpia, de gente que s&iacute; vas a conocer.">A clean house, from people you'll actually meet.</h1>
+        <p class="lede" data-es="The Cleaning Queen son Doris y Adri&aacute;n &mdash; un matrimonio, padres de tres, que limpia casas en Kyle, Buda y Niederwald. Doris lleva m&aacute;s de veinte a&ntilde;os haci&eacute;ndolo.">
           The Cleaning Queen is Doris and Adrian &mdash; a married couple, parents of three,
           cleaning houses across Kyle, Buda and Niederwald. Doris has been doing this for
           more than twenty years.
         </p>
         <ul class="trust">
-          <li>&#9819;&nbsp;<b>20+ years</b> cleaning houses</li>
-          <li>&#10003;&nbsp;<b>Verified</b> on Nextdoor</li>
-          <li>&#9679;&nbsp;Open <b>8am&ndash;8pm</b> every day</li>
+          <li data-es="&#9819;&nbsp;<b>20+ a&ntilde;os</b> limpiando casas">&#9819;&nbsp;<b>20+ years</b> cleaning houses</li>
+          <li data-es="&#10003;&nbsp;<b>Verificado</b> en Nextdoor">&#10003;&nbsp;<b>Verified</b> on Nextdoor</li>
+          <li data-es="&#9679;&nbsp;Abierto <b>8am&ndash;8pm</b> todos los d&iacute;as">&#9679;&nbsp;Open <b>8am&ndash;8pm</b> every day</li>
           <li>&#128172;&nbsp;<b>English</b> &amp; <b>Espa&ntilde;ol</b></li>
         </ul>
       </div>
 
 
       <div class="quote" id="quote">
-        <h2>Ask for a quote</h2>
-        <p class="sub">Takes about thirty seconds. No obligation.</p>
+        <h2 data-es="Pide un presupuesto">Ask for a quote</h2>
+        <p class="sub" data-es="Toma unos treinta segundos. Sin compromiso.">Takes about thirty seconds. No obligation.</p>
 
         <form id="quoteForm" action="https://formsubmit.co/enocherdner@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Website enquiry — The Cleaning Queen">
@@ -253,47 +272,47 @@
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://enocherdner.github.io/the-cleaning-queen/?sent=1">
           <input type="text" name="_honey" style="display:none">
-          <label>Your name
+          <label><span data-es="Su nombre">Your name</span>
             <input name="name" autocomplete="name" required>
           </label>
           <div class="row">
-            <label>Phone
+            <label><span data-es="Tel&eacute;fono">Phone</span>
               <input name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
             </label>
-            <label>Town
+            <label><span data-es="Ciudad">Town</span>
               <select name="town">
                 <option>Kyle</option><option>Buda</option>
-                <option>Niederwald</option><option>Somewhere nearby</option>
+                <option>Niederwald</option><option data-es="Cerca de aqu&iacute;">Somewhere nearby</option>
               </select>
             </label>
           </div>
 
-          <label>How often?
+          <label><span data-es="&iquest;Cada cu&aacute;nto?">How often?</span>
             <div class="chips" role="group">
-              <span class="chip"><input type="radio" name="often" value="Every week"><span>Every week</span></span>
-              <span class="chip"><input type="radio" name="often" value="Every other week" checked><span>Every other week</span></span>
-              <span class="chip"><input type="radio" name="often" value="Monthly"><span>Monthly</span></span>
-              <span class="chip"><input type="radio" name="often" value="One-off"><span>One-off</span></span>
+              <span class="chip"><input type="radio" name="often" value="Every week"><span data-es="Cada semana">Every week</span></span>
+              <span class="chip"><input type="radio" name="often" value="Every other week" checked><span data-es="Cada dos semanas">Every other week</span></span>
+              <span class="chip"><input type="radio" name="often" value="Monthly"><span data-es="Cada mes">Monthly</span></span>
+              <span class="chip"><input type="radio" name="often" value="One-off"><span data-es="Una sola vez">One-off</span></span>
             </div>
           </label>
 
-          <label>Anything else <span class="fine" style="text-align:left;font-weight:400">&mdash; bedrooms, bathrooms, pets, when suits</span>
-            <textarea name="detail" placeholder="Three bedrooms, two baths, one very relaxed dog. Mornings are best."></textarea>
+          <label><span data-es="Algo m&aacute;s">Anything else</span> <span class="fine" style="text-align:left;font-weight:400" data-es="&mdash; cuartos, ba&ntilde;os, mascotas, cu&aacute;ndo le conviene">&mdash; bedrooms, bathrooms, pets, when suits</span>
+            <textarea name="detail" data-es-ph="Tres rec&aacute;maras, dos ba&ntilde;os, un perro muy tranquilo. Las ma&ntilde;anas son mejores." placeholder="Three bedrooms, two baths, one very relaxed dog. Mornings are best."></textarea>
           </label>
 
-          <button type="submit">Send it to Doris &amp; Adrian</button>
-          <p class="fine">Sent straight through &mdash; no account, no sign-up.</p>
+          <button type="submit" data-es="Env&iacute;aselo a Doris y Adri&aacute;n">Send it to Doris &amp; Adrian</button>
+          <p class="fine" data-es="Se env&iacute;a directo &mdash; sin cuenta, sin registro.">Sent straight through &mdash; no account, no sign-up.</p>
 
-          <div class="or">or reach them now</div>
+          <div class="or" data-es="o contáctalos ahora">or reach them now</div>
           <div class="alt">
-            <a href="tel:+12105800712">&#9742; Call</a>
-            <a href="mailto:doris.and.adrian.llc@gmail.com?subject=Cleaning%20quote">&#9993; Email</a>
+            <a href="tel:+12105800712" data-es="&#9742; Llamar">&#9742; Call</a>
+            <a href="mailto:doris.and.adrian.llc@gmail.com?subject=Cleaning%20quote" data-es="&#9993; Correo">&#9993; Email</a>
           </div>
         </form>
 
         <div class="sent" id="sent" role="status">
-          <h3>&#9819; That's with them.</h3>
-          <p>Doris or Adrian will get back to you shortly. If it's urgent, call
+          <h3 data-es="&#9819; Ya les lleg&oacute;.">&#9819; That's with them.</h3>
+          <p data-es="Doris o Adri&aacute;n te responder&aacute;n pronto. Si es urgente, llama al <a href=&quot;tel:+12105800712&quot;>(210) 580-0712</a>.">Doris or Adrian will get back to you shortly. If it's urgent, call
              <a href="tel:+12105800712">(210) 580-0712</a>.</p>
         </div>
       </div>
@@ -302,11 +321,11 @@
 
   <section>
     <div class="wrap">
-      <h2>How it works</h2>
+      <h2 data-es="C&oacute;mo funciona">How it works</h2>
       <ol class="steps">
-        <li><h3>Tell them about your place</h3><p>Thirty seconds on the form above, a call, or an email. Whatever suits.</p></li>
-        <li><h3>They come back with a real number</h3><p>No prices guessed at over the internet. A quote for your house, not an average one.</p></li>
-        <li><h3>The same two people, every visit</h3><p>Doris and Adrian, not a rota of strangers. You never explain your house twice.</p></li>
+        <li><h3 data-es="Cu&eacute;ntales de tu casa">Tell them about your place</h3><p data-es="Treinta segundos en el formulario, una llamada o un correo. Como prefieras.">Thirty seconds on the form above, a call, or an email. Whatever suits.</p></li>
+        <li><h3 data-es="Te dan un precio real">They come back with a real number</h3><p data-es="Nada de precios adivinados por internet. Un presupuesto para tu casa, no un promedio.">No prices guessed at over the internet. A quote for your house, not an average one.</p></li>
+        <li><h3 data-es="Las mismas dos personas, cada visita">The same two people, every visit</h3><p data-es="Doris y Adri&aacute;n, no una lista de desconocidos. Nunca explicas tu casa dos veces.">Doris and Adrian, not a rota of strangers. You never explain your house twice.</p></li>
       </ol>
     </div>
   </section>
@@ -314,45 +333,45 @@
   <section>
     <div class="wrap two">
       <div>
-        <h2>Twenty years, and the same two people</h2>
-        <p>
+        <h2 data-es="Veinte a&ntilde;os, y las mismas dos personas">Twenty years, and the same two people</h2>
+        <p data-es="La mayor&iacute;a de las compa&ntilde;&iacute;as de limpieza mandan a quien est&eacute; libre. Eso significa un desconocido en tu casa, y explicar lo mismo cada vez.">
           Most cleaning companies send whoever is free. That means a stranger in your house,
           and explaining the same things again every time.
         </p>
-        <p>
+        <p data-es="Doris lleva m&aacute;s de veinte a&ntilde;os limpiando casas, en m&aacute;s de un pa&iacute;s. Adri&aacute;n &mdash; &eacute;l mismo se describe como &laquo;el de los papeles&raquo; &mdash; lleva las reservas y limpia junto a ella. Esa es toda la compa&ntilde;&iacute;a. Llegas a conocerlos, y ellos llegan a conocer tu casa: qu&eacute; gabinete se atora, qu&eacute; piso odia el trapeador equivocado.">
           Doris has cleaned homes for over twenty years, in more than one country. Adrian
           &mdash; his own description is &ldquo;the paperwork guy&rdquo; &mdash; runs the booking
           side and cleans alongside her. That is the whole company. You get to know them, and they
           get to know your house: which cupboard sticks, which floor hates the wrong mop.
         </p>
-        <p>
+        <p data-es="Llegaron de Espa&ntilde;a en 2021, pasaron un tiempo en trabajos corporativos, y decidieron que preferían trabajar por su cuenta. Hablan ingl&eacute;s y espa&ntilde;ol, y traen sus propios materiales y herramientas &mdash; no necesitas tener nada en casa.">
           They came over from Spain in 2021, spent a while in corporate jobs, and decided they
           would rather work for themselves. They speak English and Spanish, and they bring their
           own materials and tools &mdash; you do not need to have anything in.
         </p>
-        <p>
+        <p data-es="Para un trabajo donde le entregas las llaves a alguien, saber exactamente qui&eacute;n va a llegar es lo que importa.">
           For a job that involves handing somebody your keys, knowing exactly who is turning up
           is the part that matters.
         </p>
       </div>
       <div class="card">
-        <h3>What you can ask for</h3>
-        <p style="margin:0 0 6px">A standard clean, plus extras on top &mdash; oven, microwave,
+        <h3 data-es="Lo que puedes pedir">What you can ask for</h3>
+        <p style="margin:0 0 6px" data-es="Una limpieza est&aacute;ndar, m&aacute;s extras &mdash; horno, microondas, refrigerador y m&aacute;s. Las limpiezas recurrentes cuestan menos por visita que las de una sola vez.">A standard clean, plus extras on top &mdash; oven, microwave,
         fridge and more. Recurring cleans cost less per visit than one-offs.</p>
-        <p class="src" style="margin:0 0 22px">Tell them what you need on the form and they will
+        <p class="src" style="margin:0 0 22px" data-es="Dile lo que necesitas en el formulario y te cotizan tu casa, no un promedio.">Tell them what you need on the form and they will
         quote your house, not an average one.</p>
-        <h3>Where they clean</h3>
+        <h3 data-es="D&oacute;nde limpian">Where they clean</h3>
         <ul class="towns"><li>Kyle</li><li>Buda</li><li>Niederwald</li></ul>
-        <p class="src" style="margin-top:14px">Nearby and not sure? Ask &mdash; it's usually a yes.</p>
-        <h3 style="margin-top:26px">Open every day</h3>
+        <p class="src" style="margin-top:14px" data-es="&iquest;Cerca y no est&aacute;s seguro? Pregunta &mdash; casi siempre es que s&iacute;.">Nearby and not sure? Ask &mdash; it's usually a yes.</p>
+        <h3 style="margin-top:26px" data-es="Abierto todos los d&iacute;as">Open every day</h3>
         <table class="hours" id="hoursTable">
-          <tr data-d="0"><td>Sunday</td><td>8am &ndash; 8pm</td></tr>
-          <tr data-d="1"><td>Monday</td><td>8am &ndash; 8pm</td></tr>
-          <tr data-d="2"><td>Tuesday</td><td>8am &ndash; 8pm</td></tr>
-          <tr data-d="3"><td>Wednesday</td><td>8am &ndash; 8pm</td></tr>
-          <tr data-d="4"><td>Thursday</td><td>8am &ndash; 8pm</td></tr>
-          <tr data-d="5"><td>Friday</td><td>8am &ndash; 8pm</td></tr>
-          <tr data-d="6"><td>Saturday</td><td>8am &ndash; 8pm</td></tr>
+          <tr data-d="0"><td data-es="Domingo">Sunday</td><td>8am &ndash; 8pm</td></tr>
+          <tr data-d="1"><td data-es="Lunes">Monday</td><td>8am &ndash; 8pm</td></tr>
+          <tr data-d="2"><td data-es="Martes">Tuesday</td><td>8am &ndash; 8pm</td></tr>
+          <tr data-d="3"><td data-es="Mi&eacute;rcoles">Wednesday</td><td>8am &ndash; 8pm</td></tr>
+          <tr data-d="4"><td data-es="Jueves">Thursday</td><td>8am &ndash; 8pm</td></tr>
+          <tr data-d="5"><td data-es="Viernes">Friday</td><td>8am &ndash; 8pm</td></tr>
+          <tr data-d="6"><td data-es="S&aacute;bado">Saturday</td><td>8am &ndash; 8pm</td></tr>
         </table>
       </div>
     </div>
@@ -360,8 +379,8 @@
 
   <section class="final">
     <div class="wrap">
-      <h2>Ready when you are</h2>
-      <p>Call and speak to Adrian, or send the form and they'll come back to you.</p>
+      <h2 data-es="Cuando t&uacute; quieras">Ready when you are</h2>
+      <p data-es="Llama y habla con Adri&aacute;n, o manda el formulario y te responden.">Call and speak to Adrian, or send the form and they'll come back to you.</p>
       <a class="callbtn" href="tel:+12105800712">&#9742; (210) 580-0712</a>
     </div>
   </section>
@@ -369,17 +388,66 @@
 
 <footer>
   <div class="wrap">
-    <strong>The Cleaning Queen</strong> &mdash; house cleaning in Kyle, Buda &amp; Niederwald, Texas.
-    Family run by Doris and Adrian. Open 8am&ndash;8pm, seven days.
+    <span data-es="<strong>The Cleaning Queen</strong> &mdash; limpieza de casas en Kyle, Buda y Niederwald, Texas. Negocio familiar de Doris y Adri&aacute;n. Abierto 8am&ndash;8pm, los siete d&iacute;as."><strong>The Cleaning Queen</strong> &mdash; house cleaning in Kyle, Buda &amp; Niederwald, Texas.
+    Family run by Doris and Adrian. Open 8am&ndash;8pm, seven days.</span>
   </div>
 </footer>
 
 <nav class="sticky" aria-label="Contact">
-  <a class="p" href="tel:+12105800712">&#9742; Call now</a>
-  <a class="s" href="#quote">Get a quote</a>
+  <a class="p" href="tel:+12105800712" data-es="&#9742; Llamar ahora">&#9742; Call now</a>
+  <a class="s" href="#quote" data-es="Pedir presupuesto">Get a quote</a>
 </nav>
 
 <script>
+/* ────────────────────────────────────────────────────────────────────
+   ENGLISH / ESPAÑOL
+
+   Half this market speaks Spanish and Doris and Adrian advertise in
+   both languages, so the page does too. Anything with a data-es
+   attribute holds its Spanish in that attribute; the English stays in
+   the markup so the page is still correct with JavaScript off.
+
+   The choice is remembered, and a Spanish-speaking browser gets
+   Spanish first without having to ask for it.
+   ──────────────────────────────────────────────────────────────────── */
+var TCQ = (function () {
+  var lang = "en";
+  function apply(next) {
+    lang = next;
+    document.documentElement.lang = next === "es" ? "es" : "en";
+    var nodes = document.querySelectorAll("[data-es]");
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (!el.hasAttribute("data-en")) el.setAttribute("data-en", el.innerHTML);
+      el.innerHTML = el.getAttribute(next === "es" ? "data-es" : "data-en");
+    }
+    var ph = document.querySelectorAll("[data-es-ph]");
+    for (var j = 0; j < ph.length; j++) {
+      var f = ph[j];
+      if (!f.hasAttribute("data-en-ph")) f.setAttribute("data-en-ph", f.placeholder);
+      f.placeholder = f.getAttribute(next === "es" ? "data-es-ph" : "data-en-ph");
+    }
+    var btns = document.querySelectorAll(".lang-b");
+    for (var k = 0; k < btns.length; k++) {
+      var on = btns[k].getAttribute("data-lang") === next;
+      btns[k].classList.toggle("on", on);
+      btns[k].setAttribute("aria-pressed", on ? "true" : "false");
+    }
+    var subj = document.querySelector('input[name="_subject"]');
+    if (subj) subj.value = "Website enquiry — The Cleaning Queen (" + next.toUpperCase() + ")";
+    if (window.__status) window.__status(next);
+    try { localStorage.setItem("tcq-lang", next); } catch (e) {}
+  }
+  var start = null;
+  try { start = localStorage.getItem("tcq-lang"); } catch (e) {}
+  if (!start) start = (navigator.language || "en").slice(0, 2) === "es" ? "es" : "en";
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest(".lang-b");
+    if (b) apply(b.getAttribute("data-lang"));
+  });
+  return { apply: apply, start: start, get: function () { return lang; } };
+})();
+
 /* Open or closed, worked out from their real hours: 8am–8pm, seven days, Central time.
    Small, factual, and the kind of thing a customer notices — it answers "can I ring
    them right now" before they have to wonder. */
@@ -390,14 +458,19 @@
   var open = h >= 8 && h < 20;
 
   var label = document.getElementById("openNow"), dot = document.getElementById("dot");
-  if (open) {
-    label.textContent = "Open now until 8pm";
-  } else {
-    label.textContent = h < 8 ? "Opens at 8am today" : "Closed now — opens 8am tomorrow";
-    dot.classList.add("shut");
-  }
+  var COPY = {
+    en: { open: "Open now until 8pm", soon: "Opens at 8am today", shut: "Closed now — opens 8am tomorrow" },
+    es: { open: "Abierto ahora hasta las 8pm", soon: "Abre hoy a las 8am", shut: "Cerrado — abre mañana a las 8am" }
+  };
+  window.__status = function (lg) {
+    var c = COPY[lg] || COPY.en;
+    label.textContent = open ? c.open : (h < 8 ? c.soon : c.shut);
+  };
+  if (!open) dot.classList.add("shut");
+  window.__status("en");
   var row = document.querySelector('#hoursTable tr[data-d="' + day + '"]');
   if (row) row.classList.add("today");
+  TCQ.apply(TCQ.start);
 })();
 
 /* ────────────────────────────────────────────────────────────────────
