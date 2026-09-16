@@ -95,3 +95,27 @@ around that purple rather than a colour of its own.
   commercial work. None of it may be listed as a service until they say so.
 - Whether they are insured or bonded — never claim this for anyone.
 - Service area beyond "Kyle and Buda".
+
+## Correction — 2026-09-16, read off their public Facebook reviews page
+
+A real customer review, publicly visible without logging in:
+
+> "Had an urgent move out & **Brandy** from The Cleaning Queen was amazing! Super
+> efficient and professional on short notice. The property manager was so impressed
+> by the spotless result. Highly recommend."
+> — Chaston David Ransom Israel, 13 July 2025 `[verified]`
+
+**This is now on the page**, quoted with the author's name and the date.
+
+**It also contradicts an earlier claim.** The brief said Doris does the cleaning, and
+the page said "same two people, every visit." A customer names a cleaner called
+**Brandy**. So either they have staff, Brandy is a subcontractor, or Doris goes by
+another name. Nobody knows. `[unverified]`
+
+Every "two people, every visit" claim has been **removed from the page** and replaced
+with "a family business, not a rota", which is true either way. **Ask Adrian on the
+call**: "is it just the two of you, or do you have others cleaning with you?"
+
+Follower count now reads **804**, not 805. Immaterial, but the page does not state it.
+
+The other nine reviews are behind a Facebook login and have not been read.
