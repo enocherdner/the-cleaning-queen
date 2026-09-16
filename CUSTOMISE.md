@@ -58,7 +58,26 @@ from Enoch saying "eleven people tapped your number last month" does.** RETAINER
 already promises "a short note at the end of each month" — that note *is* the
 product, and the dashboard is a bonus for the ones who ask.
 
-## Switching the counting on
+## INSTALLED 2026-09-16 — Umami Cloud
+
+Website id `3f63e87b-8641-4faf-9c91-b0ebf488434a`. Verified live the same day: a real
+tap on the phone number fires a request to `gateway.umami.is/api/send`.
+
+**Where the tag lives:** it is an HTML `<script>` element, placed just ABOVE the main
+`<script>` block near the bottom of `index.html`. It cannot go where the old
+"ANALYTICS TAG GOES HERE" marker was — that marker is inside JavaScript, and an HTML
+tag pasted there is a syntax error. The marker has been corrected to say so.
+
+**No share link has been published, deliberately.** Umami's free share links are public
+URLs. Enoch holds the numbers and reports them.
+
+### The first events in the dashboard are tests, not customers
+
+Two events were fired on 2026-09-16 to prove the install works: one `Call tapped` and
+one `Enquiry sent`, both tagged `source: install test`. **Do not report these to anyone
+as real activity.** Discount them from the first month's numbers.
+
+## Switching the counting on (reference — already done for this site)
 
 1. cloud.umami.is → sign up → Add website
 2. Settings → Websites → Edit → Tracking code → copy the one-line tag
