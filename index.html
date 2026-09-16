@@ -116,14 +116,16 @@
     /* The header bar was the thing pushing the page wider than the phone:
        brand + both language pills could not fit, and flex items will not
        shrink below their content unless told to. */
-    .bar{gap:10px}
-    .brand{min-width:0;flex:1 1 auto}
-    .mark{width:36px;height:36px;border-radius:9px}
-    .brand-name{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .brand-sub{display:none}
-    .hdr-right{flex:none}
+    /* On a phone the name and the language pills were colliding. Give the
+       business the whole first line and drop the toggle underneath it,
+       right-aligned — out of the way, still the first thing you can tap. */
+    .bar{flex-direction:column;align-items:stretch;gap:10px;padding:12px 0 11px}
+    .brand{min-width:0}
+    .brand-name{font-size:19px;line-height:1.15}
+    .brand-sub{font-size:10.5px;letter-spacing:.14em}
+    .hdr-right{justify-content:flex-end}
     .lang{padding:2px}
-    .lang-b{padding:8px 10px;font-size:12px}
+    .lang-b{padding:7px 14px;font-size:12.5px}
   }
 
   /* ── the form ───────────────────────────────────────────── */
