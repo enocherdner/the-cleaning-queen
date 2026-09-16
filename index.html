@@ -237,7 +237,12 @@
         <h2>Ask for a quote</h2>
         <p class="sub">Takes about thirty seconds. No obligation.</p>
 
-        <form id="quoteForm" novalidate>
+        <form id="quoteForm" action="https://formsubmit.co/enocherdner@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Website enquiry — The Cleaning Queen">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://enocherdner.github.io/the-cleaning-queen/?sent=1">
+          <input type="text" name="_honey" style="display:none">
           <label>Your name
             <input name="name" autocomplete="name" required>
           </label>
@@ -267,7 +272,7 @@
           </label>
 
           <button type="submit">Send it to Doris &amp; Adrian</button>
-          <p class="fine">Goes straight to them &mdash; nobody else.</p>
+          <p class="fine">Sent straight through &mdash; no account, no sign-up.</p>
 
           <div class="or">or reach them now</div>
           <div class="alt">
@@ -375,17 +380,50 @@
   if (row) row.classList.add("today");
 })();
 
-/* Demonstration only — see the note at the top of this file. Must be wired to
-   doris.and.adrian.llc@gmail.com before this ever goes live. */
-document.getElementById("quoteForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  var name = this.querySelector('[name="name"]'), phone = this.querySelector('[name="phone"]');
-  if (!name.value.trim()) { name.focus(); return; }
-  if (!phone.value.trim()) { phone.focus(); return; }
-  this.style.display = "none";
-  document.getElementById("sent").style.display = "block";
-  document.getElementById("quote").scrollIntoView({ block: "center" });
-});
+/* ────────────────────────────────────────────────────────────────────
+   INSIGHTS — the two things that actually matter to this business:
+   somebody tapped the number, or somebody sent an enquiry. Pageviews
+   are vanity. These event names are already wired to the buttons, so
+   nothing here changes when you pick an analytics provider.
+
+   TO SWITCH THE COUNTING ON — paste the tag where marked below:
+     Cloudflare Web Analytics — free forever, no cookie banner needed.
+       https://dash.cloudflare.com  →  Analytics  →  Web Analytics  →  Add site
+   ──────────────────────────────────────────────────────────────────── */
+/* ANALYTICS TAG GOES HERE */
+(function () {
+  function track(name, detail) {
+    try {
+      if (window.plausible) window.plausible(name, { props: detail || {} });
+      if (window.gtag) window.gtag('event', name, detail || {});
+      var k = 'insights';
+      var log = JSON.parse(localStorage.getItem(k) || '{}');
+      log[name] = (log[name] || 0) + 1;
+      log._last = new Date().toISOString();
+      localStorage.setItem(k, JSON.stringify(log));
+    } catch (e) {}
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a[href^="tel:"]'))    track('Call tapped');
+    if (e.target.closest('a[href^="mailto:"]')) track('Email tapped');
+  });
+
+  var f = document.getElementById("quoteForm");
+  f.addEventListener("submit", function (e) {
+    var name = this.querySelector('[name="name"]'), phone = this.querySelector('[name="phone"]');
+    if (!name.value.trim())  { e.preventDefault(); name.focus();  return; }
+    if (!phone.value.trim()) { e.preventDefault(); phone.focus(); return; }
+    track('Enquiry sent');
+  });
+
+  // FormSubmit sends them back here with ?sent=1 — show the confirmation.
+  if (location.search.indexOf('sent=1') !== -1) {
+    f.style.display = "none";
+    document.getElementById("sent").style.display = "block";
+    document.getElementById("quote").scrollIntoView({ block: "center" });
+  }
+})();
 </script>
 </body>
 </html>
