@@ -108,8 +108,17 @@
   .lang-b:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
   @media(max-width:600px){
     .wrap{padding:0 30px}
-    .lang-b{padding:9px 11px;font-size:12.5px}
-    .bar{gap:8px}
+    /* The header bar was the thing pushing the page wider than the phone:
+       brand + both language pills could not fit, and flex items will not
+       shrink below their content unless told to. */
+    .bar{gap:10px}
+    .brand{min-width:0;flex:1 1 auto}
+    .mark{width:36px;height:36px;border-radius:9px}
+    .brand-name{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .brand-sub{display:none}
+    .hdr-right{flex:none}
+    .lang{padding:2px}
+    .lang-b{padding:8px 10px;font-size:12px}
   }
 
   /* ── the form ───────────────────────────────────────────── */
