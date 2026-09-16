@@ -4,8 +4,9 @@
 
 ## The enquiry form — READ THIS FIRST
 
-Posts to **FormSubmit** at `enocherdner@gmail.com`. An activation email was sent
-2026-09-16 — **click the confirmation or the form silently stops working.**
+Posts to **FormSubmit** at `enocherdner@gmail.com`. **Activated and tested end to end
+on 2026-09-16** — a real submission from the live page arrived in the inbox with every
+field. Working.
 
 **When they become a client**, change the address in the `<form action=...>` line
 to `doris.and.adrian.llc@gmail.com`, change the `_next` value if the domain
